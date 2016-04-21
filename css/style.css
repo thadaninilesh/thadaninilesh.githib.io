@@ -3,10 +3,6 @@
 
 
 body {
-    background: url(../images/bg.jpg) no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: 50% 50%;
     font-family: 'Open Sans', sans-serif;
 }
 
