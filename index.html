@@ -25,9 +25,43 @@
 
         <!-- Custom Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
+        <style type="text/css">
+            a.fancybox img {
+                border: none;
+                box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+                -o-transform: scale(1,1); -ms-transform: scale(1,1); -moz-transform: scale(1,1); -webkit-transform: scale(1,1); transform: scale(1,1); -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+            }
+            a.fancybox:hover img {
+                position: relative; z-index: 999; -o-transform: scale(1.03,1.03); -ms-transform: scale(1.03,1.03); -moz-transform: scale(1.03,1.03); -webkit-transform: scale(1.03,1.03); transform: scale(1.03,1.03);
+            }
+        </style>
 
 
         <!-- Template js -->
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
+        <script type="text/javascript">
+            $(function($){
+                var addToAll = true;
+                var gallery = false;
+                var titlePosition = 'inside';
+                $(addToAll ? 'img' : 'img.fancybox').each(function(){
+                    var $this = $(this);
+                    var title = $this.attr('title');
+                    var src = $this.attr('data-big') || $this.attr('src');
+                    var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+                    $this.wrap(a);
+                });
+                if (gallery)
+                    $('a.fancybox').attr('rel', 'fancyboxgallery');
+                $('a.fancybox').fancybox({
+                    titlePosition: titlePosition
+                });
+            });
+            $.noConflict();
+        </script>
         <script src="js/jquery-2.1.1.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="js/jquery.appear.js"></script>
@@ -85,7 +119,7 @@
                         </div>
                         
                         <div class="menu-item light-red">
-                            <a href="#about--modal" data-toggle="modal">
+                            <a href="#about-modal" data-toggle="modal">
                                 <i class="fa fa-user"></i>
                                 <p>About Me</p>
                             </a>
@@ -109,12 +143,21 @@
                                 <div class="carousel-inner">
                                     <div class="item active">
                                         <img src="images/slider/Nilesh-Thadani.jpg" class="img-responsive" alt="Nilesh Thadani" style="max-height:310px" title="Nilesh Thadani">
+                                        <div class="carousel-caption">
+                                            <h6>Nilesh Thadani</h6>
+                                        </div>
                                     </div>
                                     <div class="item">
                                         <img src="images/slider/CFG-2015.png" class="img-responsive" alt="Code for Good" style="max-height:310px" title="Code For Good Overnight Coding Contest">
+                                        <div class="carousel-caption">
+                                            <h6>Developing application for Happy Hearts Fund at Code for Good Challenge, 2015</h6>
+                                        </div>
                                     </div>
                                     <div class="item">
                                         <img src="images/slider/CSI-open-software.jpg" class="img-responsive" alt="CSI Open Software" style="max-height:310px" title="Getting awarded at Open Software Challenge">
+                                        <div class="carousel-caption">
+                                            <h6>Getting awarded at Open Software Challenge, CSI VESIT</h6>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -308,40 +351,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="section-title text-center">
-                            <h3>About Us</h3>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                            <h3>About Me</h3>
+                            <p>I'm a passionate developer with the ability to face everyday software challenges and have excellent leadership qualities</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="about-text">
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident. It has roots in a piece of classical Latin literature from 45 BC</p>
-                                <div class="row">
-                                    <div class="col-md-4 col-sm-6">
-                                        <ul>
-                                            <li><i class="fa fa-check-square"></i>Sed ut perspiciatis unde omnis iste natus</li>
-                                            <li><i class="fa fa-check-square"></i>Nor again is there anyone who loves</li>
-                                            <li><i class="fa fa-check-square-o"></i>At vero eos et accusamus et iusto odio</li>
-                                            <li><i class="fa fa-check-square-o"></i>Et harum quidem rerum facilis</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <ul>
-                                            <li><i class="fa fa-check-square"></i>Nor again is there anyone who loves</li>
-                                            <li><i class="fa fa-check-square"></i>Nor again is there anyone who loves</li>
-                                            <li><i class="fa fa-check-square-o"></i>Et harum quidem rerum facilis</li>
-                                            <li><i class="fa fa-check-square-o"></i>At vero eos et accusamus et iusto odio</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4 col-sm-6">
-                                        <ul>
-                                            <li><i class="fa fa-check-square"></i>Nor again is there anyone who loves</li>
-                                            <li><i class="fa fa-check-square"></i>Nor again is there anyone who loves</li>
-                                            <li><i class="fa fa-check-square-o"></i>Et harum quidem rerum facilis</li>
-                                            <li><i class="fa fa-check-square-o"></i>At vero eos et accusamus et iusto odio</li>
-                                        </ul>
-                                    </div>
-                                </div><!-- /.row -->
+                                <p>With great interest in computer sciences I began my journey from VES Institute of Technology, Mumbai where I have been doing my B.E in Computer Engineering. Data Structures, Algorithms, Web Technologies and Java have been my areas of interest throughout these years. Besides this, working out for some good social causes has always been my hobby in free times. My interest for social responsibility begun when I got an opportunity to volunteer for Vivekanand Seva Mandal, Dombivli which is a prestigious Non Profit Organisation working for the poor by providing them with basic education, water supplies, women empowerment, etc.</p>
                             </div>
                         </div>
                     </div><!-- /.row -->
@@ -353,28 +370,28 @@
                                 <div class="skill">
                                     <p>Web Design</p>          
                                     <div class="progress">         
-                                        <div class="progress-bar" role="progressbar"  data-percentage="60">
-                                            <span class="progress-bar-span" >60%</span>
-                                            <span class="sr-only">60% Complete</span>
+                                        <div class="progress-bar" role="progressbar" data-percentage="90">
+                                            <span class="progress-bar-span" >90%</span>
+                                            <span class="sr-only">90% Complete</span>
                                         </div>
                                     </div>  
                                 </div>
 
                                 <!-- Progress Bar -->
                                 <div class="skill">
-                                    <p>HTML & CSS</p>          
-                                    <div class="progress">         
-                                        <div class="progress-bar" role="progressbar"  data-percentage="95">
-                                            <span class="progress-bar-span" >95%</span>
-                                            <span class="sr-only">95% Complete</span>
+                                    <p>Bootstrap</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar"  data-percentage="90">
+                                            <span class="progress-bar-span" >90%</span>
+                                            <span class="sr-only">90% Complete</span>
                                         </div>
                                     </div>  
                                 </div>
 
                                 <!-- Progress Bar -->
                                 <div class="skill">
-                                    <p>Wordpress</p>          
-                                    <div class="progress">         
+                                    <p>Laravel</p>
+                                    <div class="progress">
                                         <div class="progress-bar" role="progressbar"  data-percentage="80">
                                             <span class="progress-bar-span" >80%</span>
                                             <span class="sr-only">80% Complete</span>
@@ -384,20 +401,42 @@
 
                                 <!-- Progress Bar -->
                                 <div class="skill">
-                                    <p>Joomla</p>          
-                                    <div class="progress">         
-                                        <div class="progress-bar" role="progressbar"  data-percentage="100">
-                                            <span class="progress-bar-span" >100%</span>
-                                            <span class="sr-only">100% Complete</span>
+                                    <p>HTML & CSS</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" data-percentage="80">
+                                            <span class="progress-bar-span" >80%</span>
+                                            <span class="sr-only">80% Complete</span>
+                                        </div>
+                                    </div>  
+                                </div>
+                                
+                                <!-- Progress Bar -->
+                                <div class="skill">
+                                    <p>Java</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" data-percentage="80">
+                                            <span class="progress-bar-span" >80%</span>
+                                            <span class="sr-only">80% Complete</span>
                                         </div>
                                     </div>  
                                 </div>
 
                                 <!-- Progress Bar -->
                                 <div class="skill">
-                                    <p>Extension</p>          
-                                    <div class="progress">         
-                                        <div class="progress-bar" role="progressbar"  data-percentage="70">
+                                    <p>Data Structures and Algorithms</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" data-percentage="75">
+                                            <span class="progress-bar-span">75%</span>
+                                            <span class="sr-only">75% Complete</span>
+                                        </div>
+                                    </div>  
+                                </div>
+
+                                <!-- Progress Bar -->
+                                <div class="skill">
+                                    <p>Codeigniter</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" data-percentage="70">
                                             <span class="progress-bar-span" >70%</span>
                                             <span class="sr-only">70% Complete</span>
                                         </div>
@@ -410,29 +449,29 @@
                             <div class="custom-tab">
                         
                                 <ul class="nav nav-tabs nav-justified" role="tablist">
-                                    <li class="active"><a href="#tab-1" role="tab" data-toggle="tab">Our Mission</a></li>
-                                    <li><a href="#tab-2" role="tab" data-toggle="tab">Our Vission</a></li>
-                                    <li><a href="#tab-3" role="tab" data-toggle="tab">Company History</a></li>
+                                    <li class="active"><a href="#tab-1" role="tab" data-toggle="tab">Vision in Life</a></li>
+                                    <li><a href="#tab-2" role="tab" data-toggle="tab">Resume</a></li>
+                                    <!--<li><a href="#tab-3" role="tab" data-toggle="tab">Company History</a></li>-->
                                 </ul>
 
                                 <div class="tab-content">
 
                                     <div class="tab-pane active" id="tab-1">
-                                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
-                                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                                        <p>I believe in learning throughot my life. As a computer engineering it is very important to keep oneself updated about the latest technologies in the market. The IT industry is growing at a pace one can't imagine and so the people in the industry must grow at a much higher pace. The ultimate goal of my life is to develop softwares that solve some real life problems and make life easy. Something which can eliminate the process of doing things manually.</p>
+                                        <p>Opportunity to apply my skills for the betterment of mankind to make their lives easy and automate their day to day processes is something I look for.</p>
                                      </div>
 
 
                                     <div class="tab-pane" id="tab-2">
-                                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
-                                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                                        <img src="images/about/Nilesh-Thadani-Resume.jpg" class="fancybox img-responsive img-thumbnail" style="max-height: 500px"></img>
+                                        <h3 style="text-align: center"><a href="resume.html" target="_blank">View Resume</a></h3>
                                     </div>
 
 
-                                    <div class="tab-pane" id="tab-3">
+                                    <!--<div class="tab-pane" id="tab-3">
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
                                         <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-                                    </div>
+                                    </div>-->
 
                                 </div><!-- /.tab-content -->
 
