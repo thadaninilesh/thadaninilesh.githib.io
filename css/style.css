@@ -961,3 +961,7 @@ and (max-width : 991px) {
 .img-size{
     height: 225px;
 }
+
+.certification-size{
+    max-height: 400px;
+}
