@@ -31,7 +31,7 @@ $(function() {
                 cache: false,
                 async: false,
                 error: function(result) {
-                    // Fail message
+                    //window.alert(result.message);
                     if(result.message==undefined){
                         $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
