@@ -819,7 +819,6 @@ and (max-width : 991px) {
 }
 
 @media only screen and (max-width : 360px) {
-    
     .footer-social li {
 		padding: 0px;
 	}
