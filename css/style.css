@@ -805,7 +805,7 @@ and (max-width : 991px) {
 
 
 .footer-social {
-    padding: 68px 0;
+    padding: 67px 0;
     border: 1px solid #FF432E;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -815,16 +815,17 @@ and (max-width : 991px) {
 
 .footer-social li {
     display: inline-block;
-    padding: 0 2px;
+    padding: 2px;
 }
 
 @media only screen and (max-width : 360px) {
     
     .footer-social li {
-		padding: 0 5px;
+		padding: 0px;
 	}
     
 }
+
 
 .footer-social li a {
     background: #FF432E;
@@ -836,6 +837,12 @@ and (max-width : 991px) {
     border-radius: 2px;
     border: 1px solid #FF432E;
     
+}
+
+@media only screen and (max-width : 360px) {
+    .footer-social li a{
+        padding: 5px;
+    }
 }
 
 .footer-social li i {
