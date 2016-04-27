@@ -967,3 +967,7 @@ and (max-width : 991px) {
 .certification-size{
     max-height: 400px;
 }
+
+.resume-bg{
+    background: url(../images/about/Nilesh-Thadani-Resume.jpg);
+}
