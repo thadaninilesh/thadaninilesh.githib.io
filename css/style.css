@@ -187,11 +187,12 @@ fieldset[disabled] .btn-primary.active {
 
 .menu-item:hover a {
     text-decoration: none;
-    //color: #333;
+    color: #ddd;
 	animation: wobble;
 	-webkit-animation: wobble;
 	animation-duration: 1000ms;
 	-webkit-animation-duration: 1000ms;
+
 }
 
 @media only screen 
@@ -449,7 +450,7 @@ and (max-width : 1199px) {
 }
 .about-text ul {
     margin-top: 30px;
-    font-size: 13px;
+    font-size: 14px;
 }
 .about-text li {
     margin-bottom: 10px;
@@ -966,4 +967,21 @@ and (max-width : 991px) {
 
 .certification-size{
     max-height: 400px;
+}
+
+.text-style{
+    color: #444;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    background: #FF432E;
+    border-radius: 5px;
+    padding: 10px 5px 10px 15px;
+}
+
+.text-style:hover{
+    background: #fff;
+    box-shadow: 4px 4px 3px 3px #FF432E;
+    color: black;
+    font-size: 1.1em;
+    border: 1px dotted #FF6F4F;
 }
